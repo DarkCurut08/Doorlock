@@ -1,5 +1,6 @@
+//Ridho Kerennn
 #include <Keypad.h>
-#include<EEPROM.h>
+#include <EEPROM.h>
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
@@ -8,7 +9,7 @@ char password[4];
 char initial_password[4],new_password[4];
 int vcc=11;
 int i=0;
-int relay_pin = 11;
+int relay_pin = 11;  //pin relay
 char key_pressed=0;
 const byte rows = 4; 
 const byte columns = 4; 
@@ -29,12 +30,12 @@ pinMode(relay_pin, OUTPUT);
 pinMode(vcc, OUTPUT);
 
 
-lcd.print(" MOUNT DYNAMICS ");
+lcd.print(" Hayolooo ");
 lcd.setCursor(0,1);
 lcd.print("Electronic Lock ");
 delay(3000);
 lcd.clear();
-lcd.print("Enter Password");
+lcd.print("Password Pintu");
 lcd.setCursor(0,1);
 initialpassword();
 }
@@ -60,26 +61,26 @@ lcd.print("Pass Accepted");
 digitalWrite(relay_pin,LOW);
 delay(2000);
 lcd.setCursor(0,0);
-lcd.print("Pres >START< to");
+lcd.print("Tekan >START< to");
 lcd.setCursor(0,1);
-lcd.print("change the pass");
+lcd.print("Ubah Password");
 delay(3000);
 lcd.clear();
-lcd.print("Enter Password:");
+lcd.print("Password Pintu");
 lcd.setCursor(0,1);
 i=0;
 }
 else{
 digitalWrite(relay_pin, HIGH);
 lcd.clear();
-lcd.print("Wrong Password");
+lcd.print("Password Benar");
 lcd.setCursor(0,0);
-lcd.print("Pres >#< to");
+lcd.print("Tekan >#< to");
 lcd.setCursor(0,1);
-lcd.print("change the pass");
+lcd.print("Ubah Password");
 delay(2000);
 lcd.clear();
-lcd.print("Enter Password");
+lcd.print("Password Pintu");
 lcd.setCursor(0,1);
 i=0;
 }}}
@@ -102,15 +103,15 @@ delay(500);
 
 if((strncmp(new_password, initial_password, 4))){
 lcd.clear();
-lcd.print("Wrong Password");
+lcd.print("Password Salah");
 lcd.setCursor(0,1);
-lcd.print("Try Again");
+lcd.print("Coba Lagi");
 delay(1000);}
 
 else{
 j=0;
 lcd.clear();
-lcd.print("New Password:");
+lcd.print("Password Baru:");
 lcd.setCursor(0,1);
 
 while(j<4){
