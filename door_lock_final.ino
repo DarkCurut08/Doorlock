@@ -54,7 +54,7 @@ if(i==4)
 {
 delay(200);
 for(int j=0;j<4;j++)
-initial_password[j]=EEPROM.read(j);
+//initial_password[j]=EEPROM.read(j);
 if(!(strncmp(password, initial_password,4))){
 lcd.clear();
 lcd.print("Pass Accepted");
@@ -71,7 +71,7 @@ lcd.setCursor(0,1);
 i=0;
 }
 else{
-digitalWrite(relay_pin, HIGH);
+//digitalWrite(relay_pin, HIGH);
 lcd.clear();
 lcd.print("Password Benar");
 lcd.setCursor(0,0);
