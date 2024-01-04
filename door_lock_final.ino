@@ -136,4 +136,4 @@ int j;
 for(j=0;j<4;j++)
 EEPROM.write(j,j+49);
 for(j=0;j<4;j++)
-initial_password[j]=EEPROM.read(j);}
+initial_password[j]=EEPROMread(j);}
